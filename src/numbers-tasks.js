@@ -281,11 +281,10 @@ function getFibonacciNumber(index) {
  *   1  => 1
  */
 function getSumToN(n) {
-  let sum = 0;
-  for (let i = 1; i <= n; i += 1) {
-    sum += i;
-  }
-  return sum;
+  return Array.from({ length: n }, (_, index) => index + 1).reduce(
+    (sum, num) => sum + num,
+    0
+  );
 }
 
 /**
