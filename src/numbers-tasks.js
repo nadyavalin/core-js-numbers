@@ -315,10 +315,7 @@ function getSumOfDigits(num) {
  *   15  => false
  */
 function isPowerOfTwo(num) {
-  const arr = num.toString().split('').map(Number);
-  const result = arr.reduce((acc) => acc / 2, num);
-  return result / 2 === 1;
-  /* пока не работает */
+  return Math.log2(num) % 1 === 0;
 }
 
 /**
@@ -425,7 +422,13 @@ function getNumberValue(number) {
  * '5'      => false
  */
 function isNumber(number) {
-  return typeof number === 'number';
+  if (number === Infinity || Number.isNaN(number)) {
+    return false;
+  }
+  if (typeof number === 'number') {
+    return true;
+  }
+  return false;
   /* пока не работает */
 }
 
