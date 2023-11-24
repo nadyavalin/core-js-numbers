@@ -422,14 +422,11 @@ function getNumberValue(number) {
  * '5'      => false
  */
 function isNumber(number) {
-  if (number === Infinity || Number.isNaN(number)) {
-    return false;
-  }
-  if (typeof number === 'number') {
-    return true;
-  }
-  return false;
-  /* пока не работает */
+  return (
+    typeof number === 'number' &&
+    Number.isFinite(number) &&
+    !Number.isNaN(number)
+  );
 }
 
 /**
