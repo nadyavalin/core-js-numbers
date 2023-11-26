@@ -455,12 +455,7 @@ function isInteger(number) {
  * 'abcdefgh'      => NaN
  */
 function getFloatOnString(str) {
-  const number = parseFloat(str);
-  if (Number.isNaN(number)) {
-    return NaN;
-  }
-  return number;
-  /* нужно использовать другой метод или оператор */
+  return Number.parseFloat(str);
 }
 
 /**
